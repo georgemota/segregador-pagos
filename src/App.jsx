@@ -40,7 +40,9 @@ const App = () => {
   const halfOne = totalOne / 2;
   const halfTwo = totalTwo / 2;
 
-  const difference = Math.abs(halfOne - halfTwo);
+  const difference = halfOne - halfTwo;
+  const personToPay = difference > 0 ? 'Edil' : 'George'; // Persona que debe pagar la diferencia
+  const amountToPay = Math.abs(difference);
 
   return (
     <div className="main-container">
@@ -140,7 +142,7 @@ const App = () => {
           <p className={totalOne > totalTwo ? 'total-positive' : 'total-negative'}>Total George: {totalOne}</p>
           <p className={totalTwo > totalOne ? 'total-positive' : 'total-negative'}>Total Edil: {totalTwo}</p>
 
-          <h3>Diferencia: {difference}</h3>
+          <h3>Diferencia: {amountToPay} ({personToPay} debe pagar esta diferencia)</h3>
         </div>
       </div>
 
